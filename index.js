@@ -1,7 +1,5 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-
-class PostDao {
+import prisma from "@venkat-clone/orm";
+class PostDao  {
     // Create a new post
     async createPost(data) {
         return await prisma.post.create({
@@ -37,4 +35,5 @@ class PostDao {
     }
 }
 
-module.exports = new PostDao();
+const postDao = new PostDao()
+export default postDao
